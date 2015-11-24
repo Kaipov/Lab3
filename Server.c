@@ -76,7 +76,7 @@ int main(int argc, char **argv)
     //accept connection from an incoming client
     while (1) {
         client_sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&c);
-
+	printf( "%d", client_sock );
         if (client_sock < 0) {
             puts("Error: accept failed");
             continue;
@@ -86,7 +86,7 @@ int main(int argc, char **argv)
      
         //Receive a message from client
 #if PROC
-        switch(fork()) {
+        switch (fork()) {
             case -1:
                 puts("Error: could not create a process");
                 close(client_sock);
