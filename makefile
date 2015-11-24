@@ -6,5 +6,4 @@ make:
 	gcc Client.c -o client.out
 	gcc Server.c -pthread -Dproc=$(proc) -o serv.out
 clean:
-	rm client.out
-	rm serv.out
+	rm -rf *.out
